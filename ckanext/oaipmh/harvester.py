@@ -399,7 +399,23 @@ class OaipmhHarvester(HarvesterBase):
             # tags, extras =  self._extract_tags_and_extras(content)
 	    # tags, extras = content['gfz-tags']	
             package_dict['tags'] = content['subjects'] #['Tag1', 'Tag2'] #tags
-            package_dict['extras'] = [] #['11', '22'] #extras
+            
+	    extras = []
+	    #key ='key'
+            #value = 'value'
+            #for i in range(3):
+            #    extras.append((key + str(i),value + str(i)))
+            #    extras.append((key + str(i),value + 'secondkey' + str(i)))
+
+	    if content['doi']:
+                extras.append(('Source',content['doi'][0]))	
+            if content['created']:
+                extras.append(('Created',content['created'][0]))
+            if content['publicationYear']:
+                extras.append(('Year of publication',content['publicationYear'][0])) 
+	    if content['supplementTo']:
+		extras.append(('Is supplement to', content['supplementTo'][0]))
+	    package_dict['extras'] = extras #['custom key1','custom val1'] #[] #['11', '22'] #extras
 		
 
 # HIER GEBEURT NOG NIKS
