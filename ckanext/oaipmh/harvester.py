@@ -415,6 +415,26 @@ class OaipmhHarvester(HarvesterBase):
                 extras.append(('Year of publication',content['publicationYear'][0])) 
 	    if content['supplementTo']:
 		extras.append(('Is supplement to', content['supplementTo'][0]))
+	    if content['cites']:
+                extras.append(('Cites',content['cites'][0]))
+            if content['westBoundLongitude']:
+                extras.append(('wLong',content['westBoundLongitude'][0]))
+            if content['eastBoundLongitude']:
+                extras.append(('eLong',content['eastBoundLongitude'][0]))
+            if content['northBoundLatitude']:
+                extras.append(('nLat',content['northBoundLatitude'][0]))
+            if content['southBoundLatitude']:
+                extras.append(('sLat',content['southBoundLatitude'][0]))
+
+            if content['contact']:
+                extras.append(('Contact',content['contact'][0]))
+            if content['contactEmail']:
+                extras.append(('Contact email', 'blabla@blabla.com'))
+            if content['publisher']:
+                extras.append(('Publisher',content['publisher'][0]))
+
+
+
 	    package_dict['extras'] = extras #['custom key1','custom val1'] #[] #['11', '22'] #extras
 		
 
