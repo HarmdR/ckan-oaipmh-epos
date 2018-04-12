@@ -72,6 +72,7 @@ datacite_reader = MetadataReader(
         'southBoundLatitude':('textList', 'default:resource/default:geoLocations/default:geoLocation/default:geoLocationBox/default:southBoundLatitude/text()'),
         'northBoundLatitude':('textList', 'default:resource/default:geoLocations/default:geoLocation/default:geoLocationBox/default:northBoundLatitude/text()'),
         'contact':           ('textList', 'default:resource/default:contributors/default:contributor[@contributorType="ContactPerson"]/default:contributorName/text()'),
+        'contactAffiliation':('textList', 'default:resource/default:contributors/default:contributor[@contributorType="ContactPerson"]/default:affiliation/text()'),
         'contactEmail':      ('textList', 'default:resource/default:titles/default:title/text()'), 
         'publisher':         ('textList', 'default:resource/default:publisher/text()')
 
